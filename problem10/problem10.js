@@ -8,11 +8,9 @@ function portal(){
   }
   
   document.getElementById("showGauntlet").innerHTML = arrGauntlet;
-
-  for(let i=0;i<arrSize;i++){
-    let swap;
-    if(i%2 == 0){
-      for(j=i;j<arrSize;){
+  let swap;
+  for(let i=0;i<arrSize;){
+      for(let j=i;j<arrSize;){
         if(arrGauntlet[i] > arrGauntlet[j]){
           swap = arrGauntlet[j];
           arrGauntlet[j] = arrGauntlet[i] ;
@@ -20,7 +18,7 @@ function portal(){
         }
         j += 2;
       }
-    }
+    i += 2;
   }
   
   document.getElementById("solved").innerHTML = "Even index array elements sorted in ascending order : " + arrGauntlet;
